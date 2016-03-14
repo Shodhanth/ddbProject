@@ -9,6 +9,7 @@ app.controller('sqlController',function($scope, $http){
     }).then(function mySucces(response) {
     	console.log('from success function');
         $scope.authentication = response.data;
+        $scope.apply();
     }, function myError(response) {
         $scope.authentication = response.statusText;
     });
@@ -24,6 +25,7 @@ app.controller('fileController',function($scope, $http){
     }).then(function mySucces(response) {
     	console.log('from success function');
         $scope.file = response.data;
+        $scope.apply();
     }, function myError(response) {
         $scope.file = response.statusText;
     });
@@ -39,6 +41,7 @@ app.controller('partController',function($scope, $http){
     }).then(function mySucces(response) {
     	console.log('from success function');
         $scope.participants = response.data;
+        $scope.apply();
     }, function myError(response) {
         $scope.participants = response.statusText;
     });
@@ -54,6 +57,7 @@ app.controller('zipController',function($scope, $http){
     }).then(function mySucces(response) {
     	console.log('from success function');
         $scope.zip = response.data;
+        $scope.apply();
     }, function myError(response) {
         $scope.zip = response.statusText;
     });

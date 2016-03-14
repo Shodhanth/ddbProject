@@ -16,43 +16,51 @@ app.controller('postController', function($scope,$http){
 		$http.post('/api/post/auth', values).then(function(){
 		alert('Entry added');
 		});
-
 	};
-/*
-	$scope.addpart = function (data){
-		var values = {
-			IP_ADD: "",
-			MAC_ADD: "",
-			USERNAME: "",
-			STORAGE_SPACE: ,
-			LOCATION: ""
-		};
 
-		$http.post('/api/post/part', values).then(function(){});
-	};
+	// $scope.addpart = function (data){
+	// 	var values = {
+	// 		IP_ADD: "",
+	// 		MAC_ADD: "",
+	// 		USERNAME: "",
+	// 		STORAGE_SPACE: ,
+	// 		LOCATION: ""
+	// 	};
+
+	// 	$http.post('/api/post/part', values).then(function(){});
+	// };
 
 	$scope.addzip = function (data){
 		var values = {
-			NAME: "",
-			MD5SUM: MD5(""),
-			USERNAME: ""
+			NAME: data.name,
+			MD5SUM: data.sum,
+			USERNAME: data.username
 		};
 
-		$http.post('/api/post/zip', values).then(function(){});
+		$http.post('/api/post/zip', values).then(function(){
+			console.log('values sent to server');
+		});
 	};
 
-	$scope.addfile = function (data){
-		var values = {
-			USERNAME: "",
-			KEY_PUBLIC: SHA1(''),
-			KEY_PRIVATE: SHA1(''),
-			FILE_NAME: "",
-			FILE_TYPE: "",
-			FRAGMENTS_NUMBER: ,
-			MD5SUM: MD5(''),
-			FILE_SIZE:
-		};
+	// $scope.addfile = function (data){
+	// 	var values = {
+	// 		USERNAME: "",
+	// 		KEY_PUBLIC: SHA1(''),
+	// 		KEY_PRIVATE: SHA1(''),
+	// 		FILE_NAME: "",
+	// 		FILE_TYPE: "",
+	// 		FRAGMENTS_NUMBER: ,
+	// 		MD5SUM: MD5(''),
+	// 		FILE_SIZE:
+	// 	};
 
-		$http.post('/api/post/file', values).then(function(){});	
-	};*/
+	// 	$http.post('/api/post/file', values).then(function(){});	
+	// };
+
+	$scope.removezip = function(data){
+		console.log(data)
+		$http.delete('/api/del/zip/', data).then(function(){
+			console.log('values sent to server to be deleted')
+		});
+	};
 });

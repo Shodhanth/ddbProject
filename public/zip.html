@@ -15,7 +15,7 @@
 			</h1>
 		</div>
 	</div> 
-	<div class="container">
+	<div class="container" ng-controller="postController">
 		<table class="table">
 			<thead>
 				<th><h1>Name</h1></th>
@@ -23,10 +23,18 @@
 				<th><h1>Username</h1></th>
 			</thead>
 			<tbody ng-controller="zipController">
+				<tr>
+					<td><input class="form-control" placeholder="Name" ng-model="data.name" type="text" /></td>
+					<td><input class="form-control" placeholder="File Name" ng-model="data.sum" type="text" /></td>
+					<td><input class="form-control" placeholder="Username" ng-model="data.username" type="text" /></td>
+					<td><a class="btn btn-primary" ng-click="addzip(data)">Add Entry</a></td>
+					<td><a class="btn btn-warning" ng-click="">Edit</a></td>
+				</tr>
 				<tr ng-repeat="data in zip">
 					<td>{{ data.NAME }}</td>
 					<td>{{ data.MD5SUM }}</td>
 					<td>{{ data.USERNAME }}</td>
+					<td><a class="btn btn-danger" ng-click="removezip(data.NAME)">Delete</a></td>
 				</tr>
 				<hr>
 			</tbody>
@@ -38,5 +46,6 @@
 		</div>
 	</div>
 	<script type="text/javascript" src="../app/controller.js"></script>
+	<script type="text/javascript" src="../app/postController.js"></script>
 </body>
 </html>

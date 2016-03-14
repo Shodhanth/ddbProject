@@ -4,7 +4,8 @@ var express = require('express'),
     path = require('path'),
     port = process.env.PORT || 3000,
     apiGet = require('./server/apiGet.js')
-    apiPost = require('./server/apiPost.js');
+    apiPost = require('./server/apiPost.js'),
+    apiDelete = require('./server/apiDel.js');
 
 var result_auth = [];   
 
@@ -44,6 +45,7 @@ app.post('/api/post/zip', apiPost.addZip);
 //api UPDATE
 
 //api DELETE
+app.delete('/api/del/zip', apiDelete.delZip);
 
 app.listen(port, function(){
 	console.log('Servering listening at port: '+port);

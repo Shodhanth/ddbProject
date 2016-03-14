@@ -6,7 +6,7 @@ module.exports.addAuth = function (req,res) {
 	var connection = mysql.createConnection({
 		host: 'localhost',
 		user: 'root',
-		password: '',
+		password: 'Dw1Ut8',
 		database: 'ARIAMY'
 	});
 	connection.connect(function(err){
@@ -18,8 +18,7 @@ module.exports.addAuth = function (req,res) {
 	
 
 	data = req.body;
-	console.log(data);
-
+	
 	var username = data.USERNAME,
 		email = data.EMAIL_ID,
 		password = md5(data.PASSWORD);
@@ -30,10 +29,9 @@ module.exports.addAuth = function (req,res) {
 		PASSWORD: password
 	};
 
-	console.log(data);
-	var qury = connection.query("INSERT INTO SET ?", data, function(err, result){
+	var qury = connection.query("INSERT INTO authentication SET ?", data, function(err, result){
 		if(err) {console.log('error inserting: ' + err); res.send("Error inserting");}
-		else console.log(qury.sql); 
+		else console.log('Entry added: '+ qury.sql); 
 	}); 		
 };
 
@@ -41,7 +39,7 @@ module.exports.addPart = function (req,res) {
 	var connection = mysql.createConnection({
 		host: 'localhost',
 		user: 'root',
-		password: '',
+		password: 'Dw1Ut8',
 		database: 'ARIAMY'
 	});
 	connection.connect(function(err){
@@ -63,7 +61,7 @@ module.exports.addFile = function (req,res) {
 	var connection = mysql.createConnection({
 		host: 'localhost',
 		user: 'root',
-		password: '',
+		password: 'Dw1Ut8',
 		database: 'ARIAMY'
 	});
 	connection.connect(function(err){
@@ -85,7 +83,7 @@ module.exports.addZip = function (req,res) {
 	var connection = mysql.createConnection({
 		host: 'localhost',
 		user: 'root',
-		password: '',
+		password: 'Dw1Ut8',
 		database: 'ARIAMY'
 	});
 	connection.connect(function(err){
@@ -97,8 +95,18 @@ module.exports.addZip = function (req,res) {
 	
 	data = req.body;
 
-	var qury = connection.query("INSERT INTO SET ?", data, function(err, result){
-		if(err) {console.log('error inserting'); res.send("Error inserting");}
+	var name = data.NAME,
+		sum = md5(data.MD5SUM),
+		username = data.USERNAME;
+
+	data = {
+		NAME: name,
+		MD5SUM: sum,
+		USERNAME: username
+	};
+
+	var qury = connection.query("INSERT INTO zip SET ?", data, function(err, result){
+		if(err) {console.log('error inserting ' +err); res.send("Error inserting");}
 		else console.log(qury.sql);
 	}); 		
 };

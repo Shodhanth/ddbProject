@@ -24,9 +24,9 @@
 			</thead>
 			<tbody ng-controller="sqlController">
 				<tr ng-controller="postController">
-					<td><input placeholder="Username" type="text" ng-model="data.username" /></td>
-					<td><input placeholder="Email id" type="text" ng-model="data.email" /></td>
-					<td><input placeholder="Password" type="password" ng-model="data.password" /></td>
+					<td><input class="form-control" placeholder="Username" type="text" ng-model="data.username" /></td>
+					<td><input class="form-control" placeholder="Email id" type="text" ng-model="data.email" /></td>
+					<td><input class="form-control" placeholder="Password" type="password" ng-model="data.password" /></td>
 					<td><a class="btn btn-primary" ng-click="addauth(data)">add</a></td>
 				</tr>
 				<tr ng-repeat="data in authentication">
