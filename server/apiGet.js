@@ -4,7 +4,7 @@ module.exports.usersList = function(req, res){
 		var connection = mysql.createConnection({
 		host: 'localhost',
 		user: 'root',
-		password: 'Dw1Ut8',
+		password: '',
 		database: 'ARIAMY'
 	});
 	connection.connect(function(err){
@@ -29,7 +29,7 @@ module.exports.fileTable = function(req, res){
 		var connection = mysql.createConnection({
 		host: 'localhost',
 		user: 'root',
-		password: 'Dw1Ut8',
+		password: '',
 		database: 'ARIAMY'
 	});
 	connection.connect(function(err){
@@ -54,7 +54,7 @@ module.exports.zipTable = function(req, res){
 		var connection = mysql.createConnection({
 		host: 'localhost',
 		user: 'root',
-		password: 'Dw1Ut8',
+		password: '',
 		database: 'ARIAMY'
 	});
 	connection.connect(function(err){
@@ -79,7 +79,7 @@ module.exports.partTable = function(req, res){
 		var connection = mysql.createConnection({
 		host: 'localhost',
 		user: 'root',
-		password: 'Dw1Ut8',
+		password: '',
 		database: 'ARIAMY'
 	});
 	connection.connect(function(err){

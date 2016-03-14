@@ -6,7 +6,7 @@ module.exports.addAuth = function (req,res) {
 	var connection = mysql.createConnection({
 		host: 'localhost',
 		user: 'root',
-		password: 'Dw1Ut8',
+		password: '',
 		database: 'ARIAMY'
 	});
 	connection.connect(function(err){
@@ -41,7 +41,7 @@ module.exports.addPart = function (req,res) {
 	var connection = mysql.createConnection({
 		host: 'localhost',
 		user: 'root',
-		password: 'Dw1Ut8',
+		password: '',
 		database: 'ARIAMY'
 	});
 	connection.connect(function(err){
@@ -63,7 +63,7 @@ module.exports.addFile = function (req,res) {
 	var connection = mysql.createConnection({
 		host: 'localhost',
 		user: 'root',
-		password: 'Dw1Ut8',
+		password: '',
 		database: 'ARIAMY'
 	});
 	connection.connect(function(err){
@@ -85,7 +85,7 @@ module.exports.addZip = function (req,res) {
 	var connection = mysql.createConnection({
 		host: 'localhost',
 		user: 'root',
-		password: 'Dw1Ut8',
+		password: '',
 		database: 'ARIAMY'
 	});
 	connection.connect(function(err){
