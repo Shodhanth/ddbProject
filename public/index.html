@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="ddbproj">
+<head>
+	<title>DDB Mini Project | 22 & 25</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="jumbotron">
+			<h1>
+				<center>Shodhanth & Varun</center>
+			</h1>
+		</div>
+	</div> 
+	<div class="container">
+		<table class="table">
+			<thead>
+				<th><h1>Username</h1></th>
+				<th><h1>Email</h1></th>
+				<th><h1>Password</h1></th>
+			</thead>
+			<tbody ng-controller="sqlController">
+				<tr ng-controller="postController">
+					<td><input placeholder="Username" type="text" ng-model="data.username" /></td>
+					<td><input placeholder="Email id" type="text" ng-model="data.email" /></td>
+					<td><input placeholder="Password" type="password" ng-model="data.password" /></td>
+					<td><a class="btn btn-primary" ng-click="addauth(data)">add</a></td>
+				</tr>
+				<tr ng-repeat="data in authentication">
+					<td>{{ data.USERNAME }}</td>
+					<td>{{ data.EMAIL_ID }}</td>
+					<td>{{ data.PASSWORD }}</td>
+				</tr>
+				<hr>
+			</tbody>
+		</table>
+		<div class="container">
+			<a class="btn btn-primary" href="/zip">zip</a>
+			<a class="btn btn-primary" href="/participants">participants</a>
+			<a class="btn btn-primary" href="/file">file</a>
+		</div>
+	</div>
+	<script type="text/javascript" src="../app/controller.js"></script>
+	<script type="text/javascript" src="../app/postController.js"></script>
+</body>
+</html>
