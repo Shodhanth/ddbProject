@@ -1,10 +1,19 @@
 language: node_js
+
 node_js:
-   -"0.12"
+  - "0.10"
+  - "0.12"
+  - "1.8"
+  - "2.5"
+  - "3.3"
+  - "4.2"
 
 before_scripts:
-   -"sudo npm install"
-   -"sudo apt-get install grunt-cli"
+   -npm install
+   -npm install grunt-cli -g
 
 env:
    -NODE_ENV=dev
+   
+   
+script: grunt uglify
