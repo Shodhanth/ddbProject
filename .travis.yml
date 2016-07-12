@@ -3,10 +3,11 @@ language: node_js
 node_js:
   - 0.12
   
+scripts:
+  -npm start
 
 before_scripts:
    -npm install
-   -sudo npm install grunt-cli -g
 
 env:
    -NODE_ENV=dev
